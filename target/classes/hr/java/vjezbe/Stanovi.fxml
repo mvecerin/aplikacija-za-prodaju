@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.java.vjezbe.StanoviController">
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="16.0" prefWidth="198.0" text="Pretrazivanje stanova" GridPane.columnSpan="2">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label text="Naslov:" GridPane.rowIndex="1" />
+            <Label text="Opis:" GridPane.rowIndex="2" />
+            <Label text="Cijena:" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#prikaziStanove" text="Pretrazi" GridPane.rowIndex="5" />
+            <TextField fx:id="naslovText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="opisText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="cijenaText" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Kvadratura:" GridPane.rowIndex="3" />
+            <TextField fx:id="kvadraturaText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+   <bottom>
+      <TableView fx:id="tablica" prefHeight="198.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="naslovStanColumn" prefWidth="100.0" text="Naslov" />
+          <TableColumn fx:id="opisStanColumn" prefWidth="100.0" text="Opis" />
+            <TableColumn fx:id="kvadraturaStanColumn" prefWidth="75.0" text="Kvadratura" />
+            <TableColumn fx:id="cijenaStanColumn" prefWidth="100.0" text="Cijena" />
+            <TableColumn fx:id="stanjeStanColumn" prefWidth="100.0" text="Stanje" />
+        </columns>
+      </TableView>
+   </bottom>
+</BorderPane>
